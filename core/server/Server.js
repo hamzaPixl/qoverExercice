@@ -27,6 +27,9 @@ function Server (repository) {
   this.Logger = require(this.path.resolve(__dirname, './../utils/Logger'));
   this.logger = new this.Logger();
 
+  this.Mailer = require(this.path.resolve(__dirname, './../utils/Mailer'));
+  this.mailer = new this.Mailer();
+
 }
 
 Server.prototype = {
@@ -150,13 +153,20 @@ Server.prototype = {
               let status = 'OK';
               let price = 0;
               if (value < 5000 || value > 75000) {
-                this.logger.log(`${req.originalUrl}, Buisness rules require value between 5.000 € and 75.000 €`)
+                this.logger.log(`${req.originalUrl}, Buisness rules require value between 5.000 € and 75.000 €`);
                 status = 'REJECT';
                 response.code = 400;
                 response.message = 'Buisness rules require value between 5.000 € and 75.000 €';
               } else {
                 price = (value * result[0].percentage) + result[0].base;
                 response.price = price;
+                this.mailer.sendEmail({
+                  name: req.params.name,
+                  value,
+                  price,
+                  username: req.params.username,
+                  car: req.params.car
+                }).then((info)=>{this.logger.log(info);}).catch((err)=>{this.logger.log(err);});
               }
               res.status(200).send(response);
               this.quote.createQuote({
