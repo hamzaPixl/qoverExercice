@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Qover Exercice</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="http://localhost:3000/public/css/toastr.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="loginpage">
+    <form class="loginform">
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+        </div>
+    </form>
+    <button id="loginbutton">Login</button>
+</div>
+
+<div id="quotespage">
+    <form class="quotesform">
+        <div class="container">
+            <label><b>Name driver</b></label>
+            <input type="text" placeholder="Enter Name driver" name="name" required>
+            <label><b>Cars</b></label>
+            <select id="carsselect">
+                <option value=""></option>
+            </select>
+            <label><b>Value</b></label>
+            <input type="text" placeholder="Enter value car" name="value" required>
+        </div>
+    </form>
+    <div id="price"></div>
+    <button id="pricebutton">GET PRICE</button>
+    <button id="logoutbutton">Logout</button>
+</div>
+
+<!-- jQuery library -->
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Notification library -->
+<script src="http://localhost:3000/public/js/toastr.js"></script>
+<!-- Main script library -->
+<script type="text/javascript" src="http://localhost:3000/public/js/main.js"></script>
+</body>
+</html>
