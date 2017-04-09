@@ -5,38 +5,75 @@
     <title>Qover Exercice</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="http://localhost:3000/public/css/toastr.css" rel="stylesheet"/>
+    <link href="http://localhost:3000/public/css/style.css" rel="stylesheet"/>
 </head>
 <body>
 
 <div id="loginpage">
-    <form class="loginform">
+    <section class="login">
         <div class="container">
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required>
-
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-wrap">
+                        <h1>Log in</h1>
+                        <form role="form" class="loginform" id="login-form" autocomplete="off">
+                            <div class="form-group">
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" name="username" id="email" class="form-control"
+                                       placeholder="somebody@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="key" class="sr-only">Password</label>
+                                <input type="password" name="password" id="key" class="form-control"
+                                       placeholder="Password">
+                            </div>
+                        </form>
+                        <button id="loginbutton" class="btn btn-custom btn-lg btn-block"
+                                value="Log in">Log in
+                        </button>
+                        <hr>
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
-    <button id="loginbutton">Login</button>
+    </section>
 </div>
 
 <div id="quotespage">
-    <form class="quotesform">
+    <section class="login">
         <div class="container">
-            <label><b>Name driver</b></label>
-            <input type="text" placeholder="Enter Name driver" name="name" required>
-            <label><b>Cars</b></label>
-            <select id="carsselect">
-                <option value=""></option>
-            </select>
-            <label><b>Value</b></label>
-            <input type="text" placeholder="Enter value car" name="value" required>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-wrap">
+                        <h1>Give price for a car</h1>
+                        <form role="form" class="quotesform  login-form" autocomplete="off">
+                            <div class="form-group">
+                                <label class="sr-only">Name drive</label>
+                                <input type="text" name="name" class="form-control"
+                                       placeholder="Name driver">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">Cars</label>
+                                <select id="carsselect">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">Value</label>
+                                <input type="text" name="value" class="form-control"
+                                       placeholder="Value">
+                            </div>
+                        </form>
+                        <button id="pricebutton" class="btn btn-custom btn-lg btn-block">GET PRICE</button>
+                        <hr>
+                        <button id="logoutbutton" class="btn btn-logout btn-lg btn-block">Log out</button>
+                        <hr>
+                        <div id="price"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
-    <div id="price"></div>
-    <button id="pricebutton">GET PRICE</button>
-    <button id="logoutbutton">Logout</button>
+    </section>
 </div>
 
 <!-- jQuery library -->
