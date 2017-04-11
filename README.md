@@ -2,7 +2,10 @@
 
 Simple exercice for Qover insureTech.
 
-# You have to create a .env file and complete all variable with you information. A .env.example is given. All variable are required.
+# Config
+
+You have to create a .env file and complete all variable with your information. 
+A .env.example is given. All variable are required.
 
     PORT=
     JWT_SECRET=
@@ -53,7 +56,7 @@ Simple exercice for Qover insureTech.
 # /quote/:name/:car/:value/:username/:token
     Create a quote
     name : name driver
-    car : vrabd of car
+    car : brand of car
     value : value of car with VAT
     username : login of user
     token : authenticate token
