@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "object-curly-spacing": "warn",
+    "space-before-function-paren": "warn",
+    "valid-typeof": "warn",
+    "global-require": "off",
+    "import/no-dynamic-require": "off"
+  }
+}
